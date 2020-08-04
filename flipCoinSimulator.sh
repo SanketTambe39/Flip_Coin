@@ -1,10 +1,18 @@
 #!/bin/bash
 
-flip=$((RANDOM%2))
+heads=0
+tails=0
 
-if [ $flip -eq 0 ]
-then
-	echo " Heads win "
-else
-	echo " Tails win "
-fi
+for ((i=0;i<100;i++))
+do
+	flip=$((RANDOM%2))
+	if [ $flip -eq 0 ]
+	then
+		heads=$(($heads+1))
+	else
+		tails=$(($tails+1))
+	fi
+done
+
+echo " head won "$heads" times "
+echo " Tail won "$tails" times "
