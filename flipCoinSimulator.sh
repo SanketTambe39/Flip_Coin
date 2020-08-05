@@ -13,7 +13,8 @@ do
         else
                 tails=$(($tails+1))
         fi
-
+#	heads=21
+#	tails=21
 	if [[ $heads -eq 21 || $tails -eq 21 ]]
 	then
 		break
@@ -21,12 +22,13 @@ do
 
 done
 
-if [ $heads -eq 21 ]
+if [[ $heads -eq 21 && $tails -eq 21 ]]
+then
+	echo " We just got Tie"
+elif [ $heads -eq 21 ]
 then
 	echo " head won "$heads" times "
 elif [ $tails -eq 21 ]
 then
 	echo " Tail won "$tails" times "
-else
-	echo " Tie "
 fi
